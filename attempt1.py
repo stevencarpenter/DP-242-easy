@@ -1,17 +1,21 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-import argparse
+def loop(people, plants):
+    weeks = 1
+    fruits = 0
+    plant = plants
+
+    while fruits < people:
+        weeks += 1
+        fruits += plants
+        plants += fruits
+
+    return weeks
 
 
 def main():
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("people", help = "number of people to be supported", type = int)
-    parser.add_argument("fruits", help = "number of fruits to start", type = int)
-    args = parser.parse_args()
-
-    print(args.people)
-    print(args.fruits)
-
-
+    print(loop(200, 15))
+    print(loop(15, 1))
+    print(loop(50000, 1))
+    print(loop(150000,250))
 main()
